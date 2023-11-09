@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Your Blog</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
+        <style type = "text/css" >
+            body{
+            background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614537979_76-p-fon-detskii-na-belom-fone-86.png");
+            background-size:contain;
+            background-repeat:repeat;
+            }
+            h1 a {
+            color: #006293;
+            font-family: 'Lobster';
+            text-decoration:none;
+            margin-left: 40px;
+            font-size:40px;
+             }
+
+            .page-header {
+                background-color: #0074AE;
+                margin-top: 0;
+                margin-left: 0;
+                padding: 20px 20px 20px 40px;
+            }
+
+            .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+                color: #ffffff;
+                font-size: 50px;
+                text-decoration: none;
+            }
+
+
+
+            h1, h2, h3, h4 {
+                font-family: 'Lobster', cursive;
+            }
+
+            .date {
+                color: #828282;
+                margin-left: 40px;
+            }
+
+            .save {
+                float: right;
+            }
+
+            .post-form textarea, .post-form input {
+                width: 100%;
+            }
+
+            .top-menu, .top-menu:hover, .top-menu:visited {
+                color: #ffffff;
+                float: right;
+                font-size: 26px;
+                margin-right: 20px;
+            }
+
+
+
+            .post h1 a, .post h1 a:visited {
+                color: #006293;
+            }
+            .discript{
+            margin-left:40px;
+            margin-bottom:70px;
+            font-size: 22px;
+            }
+            .post{
+            background-color: white;}
+
+
+
+        </style>
+
+    </head>
+    <body>
+    <div class="page-header">
+            <h1><a href="/">Your Blog</a></h1>
+    </div>
+   
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p class="discript">{{ post.text|linebreaksbr }}</p>
+                    <img src = "{{ post.photo.url }}">
+                    <div class="date">
+                        <p>Опубликовано: {{ post.published_date }}</p>
+                    </div>
+                    <hr>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
