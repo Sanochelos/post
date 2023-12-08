@@ -1,0 +1,107 @@
+{% load static %}
+<html>
+    <head>
+        <title>Your Blog</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
+        <style type = "text/css" >
+            body{
+            background-image: url("https://img.freepik.com/free-vector/hand-painted-monochromatic-terrazzo-pattern_23-2148976377.jpg?w=1380&t=st=1702018457~exp=1702019057~hmac=32f1a53ca65dd29db8bdea4c34a51a23b2ce8358b7512644a485bae4dff89b77");
+            background-size:contain;
+            background-repeat:repeat;
+            }
+            h1 a {
+            color: #006293;
+            font-family: 'Lobster';
+            text-decoration:none;
+            margin-left: 40px;
+            font-size:40px;
+             }
+
+            .page-header {
+                background-color: #0074AE;
+                margin-top: 0;
+                margin-left: 0;
+                padding: 20px 20px 20px 40px;
+            }
+
+            .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+                color: #ffffff;
+                font-size: 50px;
+                text-decoration: none;
+            }
+
+
+
+            h1, h2, h3, h4 {
+                font-family: 'Lobster', cursive;
+            }
+
+            .date {
+                color: #828282;
+                margin-left: 40px;
+                margin-top:30px;
+            }
+
+            .save {
+                float: right;
+            }
+
+            .post-form textarea, .post-form input {
+                width: 100%;
+            }
+
+            .top-menu, .top-menu:hover, .top-menu:visited {
+                color: #ffffff;
+                float: right;
+                font-size: 26px;
+                margin-right: 20px;
+            }
+
+
+
+            .post h1 a, .post h1 a:visited {
+                color: #006293;
+            }
+            .hh{
+            color: #006293;
+            margin-left: 30px;
+            font-size:40px;}
+
+
+
+            .post{
+            background-color: white;}
+
+            img {
+            width:300px;
+            height:auto;
+
+            }
+            p {
+            margin-left:40px;
+            margin-bottom:70px;
+            font-size: 22px;}
+
+
+
+        </style>
+
+    </head>
+    <body>
+    <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">BloGger</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
