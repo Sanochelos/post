@@ -2,9 +2,9 @@
 
 {% block content %}
     <div class="post">
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Редактировать<span class="glyphicon glyphicon-pencil"></span></a>
-        <h1 >{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Редактировать ✎<span class="glyphicon glyphicon-pencil"></span></a>
+        <h1 class = "q">{{ post.title }}</h1>
+        <p class = "pp">{{ post.text|linebreaksbr }}</p>
         <img src = "{{ post.photo.url }}">
         {% if post.published_date %}
             <div class="date">
